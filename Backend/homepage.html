@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Import Google Icons -->
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .button5:hover {
+      background-color: #01579b;
+      color: white;
+    }
+
+    #inpop {
+      height: 275px;
+    }
+
+    #cmi {
+      height: 200px;
+    }
+
+    .w3-xxlarge {
+      color: #01579b;
+      margin-left: auto;
+    }
+
+    .w3-button {
+      background-color: #01579b;
+      color: white;
+    }
+
+    .info {
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .margin {
+      margin-top: 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    #inner {
+
+      text-align: center;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Poppins", sans-serif
+    }
+
+    body {
+      font-size: 16px;
+    }
+
+    .w3-half img {
+      margin-bottom: -6px;
+      margin-top: 16px;
+      opacity: 0.8;
+      cursor: pointer
+    }
+
+    .w3-half img:hover {
+      opacity: 1
+    }
+  </style>
+
+
+<title>Alphanumeric Captcha Recognition</title>
+</head>
+
+<body class="#eeeeee grey lighten-3">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar #01579b light-blue darken-4 w3-collapse w3-top w3-large w3-padding"
+  style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+    style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Home<br>Page</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <dl>
+      <dt><a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a> </dt>
+      <dt class="nav-item dropdown"><a href="#" onclick="w3_close()" data-toggle="dropdown"
+          class="w3-bar-item w3-button w3-hover-white nav-link dropdown-toggle">Input Options</a>
+        <div class="dropdown-menu">
+          <a href="#rawtext" onclick="w3_close()" class="dropdown-item w3-bar-item w3-button w3-hover-white">Captcha Image</a>
+      </dt>
+      <dt><a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact Us</a></dt>
+    </dl>
+  </div>
+</nav>
+
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large #01579b light-blue darken-4 w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button #01579b light-blue darken-4 w3-margin-right" onclick="w3_open()">☰</a>
+    <span style="color:white">Input Options</span>
+  </header>
+
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Alphanumeric Captcha Recognition Using Convolutional Neural Nets</b></h1>
+    <br><h1 class="w3-xxxlarge"><b>What Does ACR Do?</b></h1>
+    <hr style="width:50px;border:5px solid #0277bd " class="w3-round">
+  </div>
+
+  <!-- About -->
+  <div class="w3-row-padding">
+    <div class="w3-container">
+      <p>Many websites such as email or online shopping sites require users to solve CAPTCHAs,
+        which usually consist of some distorted text that must be read and typed in correctly by the
+        user to distinguish between a human and a machine. For human beings this is might be a
+        comparably simple task, but computers still have difficulties. Completely Automated Public
+        Turing Test to Tell Computers and Humans Apart (CAPTCHA) is an important humanmachine distinction technology implemented in websites to prevent automatic malicious
+        program attacks. It is an established security mechanism to prevent automated posting on
+        internet forums, voting in online polls, downloading files in large amounts and many other
+        abusive usages of web services. It is a network security framework established to gauge any
+        unforeseen threat and prevent such attacks.</p>
+        
+      <div>
+        <img src="d.png" id="cmi" class="img-responsive mx-auto d-block rounded"> <br>
+      </div>
+      <p>The goal of this project is not only to develop a recognition
+        model using Convolutional Neural Nets with minimum hidden layers and still be able to
+        achieve the desired accuracy and efficiency in recognising the alphanumeric characters in the
+        captcha but also to understand what characteristics a captcha should have to be effective.</p>
+    </div>
+
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <!-- <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+  <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption"></p>
+  </div>
+</div> -->
+
+  <!-- Image -->
+  <div class="w3-row-padding">
+    <div class="w3-container" id="rawtext" style="margin-top:75px">
+      <h1 class="w3-jumbo"><b>Input Format</b></h1>
+      <h1 class="w3-xxlarge"><b>Captcha Image</b></h1>
+      <hr style="width:50px;border:5px solid #0277bd" class="w3-round">
+      <div class="w3-half">
+        <p>Captcha Image will be converted to Text Output</p>
+        <p>User needs to upload an image which consist of a captcha which is in alphanumeric format 
+          and the image will be fed to the trained Neural Nets that analyzes the image and convert
+          them into matrices and extract the alphanumeric text given all conditions of blur, strike out,
+          slanting letters and a lot more filters applied across a single letter making it tough to 
+        identify them</p><br>
+        <p>Click the button below to proceed!</p>
+        <a href="index.html"><button type="button" class="btn button5"> Try Out
+            <span class="glyphicon glyphicon-send"></span>
+          </button></a>
+      </div>
+      <div class="w3-half">
+        <img src="c.png" id="inpop" class="img-responsive mx-auto d-block rounded"> <br>
+      </div>
+    </div>
+      
+     
+      <!-- Contact -->
+      <div class="w3-container" id="contact" style="margin-top:75px">
+        <h1 class="w3-xxxlarge "><b>Contact Us.</b></h1>
+        <hr style="width:50px;border:5px solid #0277bd" class="w3-round">
+        <b><p>Do you have any queries? Feel free to get in touch! :) 
+        </p></b><br>
+        <p><i class="fa fa-arrow-right" style="font-size:20px;color:#01579b"> </i> 
+          &nbsp; Athul S ---> athulsreedhara@gmail.com&nbsp;
+        <p><i class="fa fa-arrow-right" style="font-size:20px;color:#01579b"> </i> 
+          &nbsp; Jatin S --->jatins@gmail.com&nbsp;&nbsp; </p>
+        <p><i class="fa fa-arrow-right" style="font-size:20px;color:#01579b"> </i> 
+            &nbsp; Pavankumar Reddy T ---> pavankumar@gmail.com &nbsp; </p>
+        <p><i class="fa fa-arrow-right" style="font-size:20px;color:#01579b"> </i> 
+          </i> &nbsp; Rakshit V Patil ---> rakshithpatil@gmail.com &nbsp; &nbsp;   </p>
+      </div>
+    </div> 
+
+
+
+  <!-- End page content -->
+  </div>
+
+  <!-- W3.CSS Container -->
+  <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+    <p class="w3-right"> </p>
+  </div>
+
+
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+  function store(){
+     var inputEmail= document.getElementById("email");
+     var inputName= document.getElementById("name");
+     var inputMessage= document.getElementById("message");
+     localStorage.setItem("email", inputEmail.value);
+     localStorage.setItem("name", inputName.value);
+     localStorage.setItem("message", inputMessage.value);
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+  </script>
+</body>
+</html>
